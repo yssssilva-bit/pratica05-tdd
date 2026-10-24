@@ -32,5 +32,13 @@ public class CalculadoraNota {
     
             return a1 + a2 + a3;
         }
+        public boolean podeFazerAI(double a1, double a2, double a3, double frequencia) {
+            double notaFinal = a1 + a2 + a3;
+            boolean naoAprovado = notaFinal < 70;
+            boolean frequenciaSuficiente = frequencia >= 75;
+            boolean condicaoSomas = (a1 + a3 >= 40) || (a2 + a3 >= 40);
+
+            return naoAprovado && frequenciaSuficiente && condicaoSomas;
+        }
     }
 }
