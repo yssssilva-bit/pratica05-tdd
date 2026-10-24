@@ -64,6 +64,33 @@ public class CalculadoraNotaTest {
         void naoDevePermitirFazerAIComSomasInsuficientes() {
             CalculadoraNota calc = new CalculadoraNota();
             assertFalse(calc.podeFazerAI(5, 5, 30, 80));
+     }
+        @Test
+            void deveSubstituirA1PelaAI() {
+                CalculadoraNota calc = new CalculadoraNota();
+                double novaNota = calc.aplicarAI(10, 20, 30, 25);
+                assertEquals(75.0, novaNota);
     }
 
+        @Test
+            void deveSubstituirA2PelaAI() {
+                CalculadoraNota calc = new CalculadoraNota();
+                double novaNota = calc.aplicarAI(20, 10, 30, 25);
+                assertEquals(75.0, novaNota);
+    }
+
+        @Test
+            void naoDeveSubstituirSeAIMenorOuIgual() {
+                CalculadoraNota calc = new CalculadoraNota();
+                double novaNota = calc.aplicarAI(10, 20, 30, 5);
+                assertEquals(60.0, novaNota);
+    }
+
+        @Test
+            void deveRejeitarAIMaiorQue30() {
+                CalculadoraNota calc = new CalculadoraNota();
+                assertThrows(IllegalArgumentException.class, () -> {
+                calc.aplicarAI(10, 20, 30, 35);
+        });
+    }
 }

@@ -40,5 +40,23 @@ public class CalculadoraNota {
 
             return naoAprovado && frequenciaSuficiente && condicaoSomas;
         }
+            public double aplicarAI(double a1, double a2, double a3, double notaAI) {
+            if (notaAI < 0 || notaAI > 30) {
+            throw new IllegalArgumentException("AI deve estar entre 0 e 30");
+    }
+
+                double menorNota = Math.min(a1, a2);
+
+                if (notaAI > menorNota) {
+                    if (a1 == menorNota) {
+                return notaAI + a2 + a3;
+            }   
+        else 
+            {
+                return a1 + notaAI + a3;
+         }
+
+                    return a1 + a2 + a3;
+        }
     }
 }
