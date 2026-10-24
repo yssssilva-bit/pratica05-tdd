@@ -25,5 +25,12 @@ public class CalculadoraNota {
             throw new IllegalArgumentException(
                 nomeAvaliacao + " deve estar entre 0 e " + notaMaxima);
         }
+        public double calcularNotaFinal(double a1, double a2, double a3) {
+            validarNota(a1, 30, "A1");
+            validarNota(a2, 30, "A2");
+            validarNota(a3, 40, "A3");
+    
+            return a1 + a2 + a3;
+        }
     }
 }
