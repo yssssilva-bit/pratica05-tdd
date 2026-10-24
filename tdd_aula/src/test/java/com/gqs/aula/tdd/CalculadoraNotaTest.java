@@ -93,4 +93,17 @@ public class CalculadoraNotaTest {
                 calc.aplicarAI(10, 20, 30, 35);
         });
     }
+        @Test
+            void deveRetornarReprovadoPorNota() {
+                CalculadoraNota calc = new CalculadoraNota();
+                assertEquals("REPROVADO POR NOTA", calc.situacao(60, 90));
+    }
+
+        @Test
+            void deveRetornarReprovadoPorFaltaComNotaAlta() {
+                CalculadoraNota calc = new CalculadoraNota();
+                assertEquals("REPROVADO POR FALTA", calc.situacao(95, 74));
+                //
+        
+    }
 }

@@ -58,5 +58,13 @@ public class CalculadoraNota {
 
                     return a1 + a2 + a3;
         }
-    }
+                    public String situacao(double notaFinal, double frequencia) {
+                    if (frequencia < 75) {
+                    return "REPROVADO POR FALTA";
+        }
+                    if (notaFinal >= 70) {
+                    return "APROVADO";
+        }
+            return "REPROVADO POR NOTA";
+        }
 }
